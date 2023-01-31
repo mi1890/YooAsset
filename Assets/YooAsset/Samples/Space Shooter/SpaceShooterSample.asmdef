@@ -1,0 +1,25 @@
+{
+    "name": "SpaceShooterSample",
+    "rootNamespace": "",
+    "references": [
+        "GUID:5e90fee04fdf7164fa71eeef34c6a431",
+        "GUID:e34a5702dd353724aa315fb8011f08c3",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:e62322788ba70c5428b168602000a586",
+        "GUID:f22fac247a56d2d41b687bb0d900e54e",
+        "GUID:c55575a9f1747c240822f4b7e0400716",
+        "GUID:b35e33884f6755d43b7e0511e88956d0",
+        "GUID:b0a84d582f6a6fa4185f67ce934d99c2",
+        "GUID:1ea6b676786131e4095182b742bb64ec",
+        "GUID:684e2b550704f8d4b9b18b4e334d93ba"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
