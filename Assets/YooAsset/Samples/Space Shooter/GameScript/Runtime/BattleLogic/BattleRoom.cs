@@ -238,11 +238,21 @@ public class BattleRoom
 		else if (message is BattleEventDefine.PlayerFireBullet)
 		{
 			var msg = message as BattleEventDefine.PlayerFireBullet;
-
-			// 创建子弹实体
-			var handle = _entitySpawner.SpawnSync("player_bullet", _roomRoot.transform, msg.Position, msg.Rotation);
-			var entity = handle.GameObj.GetComponent<EntityBullet>();
-			entity.InitEntity(handle);
+			if(Random.Range(0,100) > 50)
+			{
+                // 创建子弹实体
+                var handle = _entitySpawner.SpawnSync("player_bullet", _roomRoot.transform, msg.Position, msg.Rotation);
+                var entity = handle.GameObj.GetComponent<EntityBullet>();
+                entity.InitEntity(handle);
+            }
+            else
+			{
+                // 创建子弹实体
+                var handle = _entitySpawner.SpawnSync("player_bullet_sp", _roomRoot.transform, msg.Position, msg.Rotation);
+                var entity = handle.GameObj.GetComponent<EntityExploreBullet>();
+                entity.InitEntity(handle);
+            }
+			
 		}
 		else if (message is BattleEventDefine.EnemyFireBullet)
 		{

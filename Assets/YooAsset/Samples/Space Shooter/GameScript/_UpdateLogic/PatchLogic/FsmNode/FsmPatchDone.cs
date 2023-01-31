@@ -18,17 +18,18 @@ internal class FsmPatchDone : IStateNode
 	void IStateNode.OnEnter()
 	{
 		PatchEventDefine.PatchStatesChange.SendEventMessage("开始游戏！");
-		//加载dll 执行gamestart
+        //加载dll 执行gamestart
+
+       
 #if UNITY_EDITOR
         Assembly ass = Assembly.Load("SpaceShooterSample");
 #else
 		//从你的资源管理系统中获得热更新dll的数据
-		var handle = YooAssets.LoadAssetSync<TextAsset>("SpaceShooterSample.dll");
+		var handle = YooAssets.LoadRawFileSync("SpaceShooterSample.dll");
 		handle.WaitForAsyncComplete();
-        byte[] assemblyData = (handle.AssetObject as TextAsset).bytes;
+        byte[] assemblyData = handle.GetRawFileData();
 		Assembly ass = Assembly.Load(assemblyData);
 #endif
-
         Type entryType = ass.GetType("GameManager");
 		Debug.Log($"entryType:{entryType}");
         MethodInfo method = entryType.GetMethod("GameStart");

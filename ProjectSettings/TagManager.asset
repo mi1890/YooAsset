@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Asteroid
+  - Enemy
+  - EnemyBullet
+  - PlayerBullet
+  - Boundary
+  - Player
   layers:
   - Default
   - TransparentFX

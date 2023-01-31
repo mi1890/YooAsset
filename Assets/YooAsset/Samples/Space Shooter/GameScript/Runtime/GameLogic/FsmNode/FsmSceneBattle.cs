@@ -21,7 +21,7 @@ internal class FsmSceneBattle : IStateNode
 	}
 	void IStateNode.OnUpdate()
 	{
-		Debug.Log("FSM Batlle Update - hotFix");
+		//Debug.Log("FSM Batlle Update - hotFix");
 		if(_battleRoom != null)
 			_battleRoom.UpdateRoom();
 	}
