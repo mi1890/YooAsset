@@ -40,6 +40,7 @@ public class EntityExploreBullet : MonoBehaviour
         {
             if (other.CompareTag("Player") == false)
             {
+                Debug.Log("EntityExploreBullet");
                 _handle.Restore();
                 _handle = null;
             }

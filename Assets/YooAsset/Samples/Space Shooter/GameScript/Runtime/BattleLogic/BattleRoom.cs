@@ -37,7 +37,7 @@ public class BattleRoom
 
 	// 关卡参数
 	private const int EnemyCount = 10;
-	private const int EnemyScore = 10;
+	private const int EnemyScore = 15;
 	private const int AsteroidScore = 1;
 	private readonly Vector3 _spawnValues = new Vector3(6, 0, 20);
 	private readonly string[] _entityLocations = new string[]

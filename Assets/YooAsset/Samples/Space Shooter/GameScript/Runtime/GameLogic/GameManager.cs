@@ -4,17 +4,34 @@ using UnityEngine;
 using UniFramework.Event;
 using UniFramework.Machine;
 using UniFramework.Module;
+using YooAsset;
 
 public class GameManager : ModuleSingleton<GameManager>, IModule
 {
 	public static void GameStart()
 	{
+		byte[] LoadMetaFormAot(string dllname)
+		{
+			Debug.Log($"补充元数据:{dllname}");
+            var handle = YooAssets.LoadRawFileSync($"{dllname}.dll");
+            handle.WaitForAsyncComplete();
+            byte[] assemblyData = handle.GetRawFileData();
+			return assemblyData;
+        }
+		//Aot
+		HybridCLR.RuntimeApi.LoadMetadataForAOTAssembly(LoadMetaFormAot("mscorlib"), HybridCLR.HomologousImageMode.SuperSet);
+        HybridCLR.RuntimeApi.LoadMetadataForAOTAssembly(LoadMetaFormAot("System"), HybridCLR.HomologousImageMode.SuperSet);
+        HybridCLR.RuntimeApi.LoadMetadataForAOTAssembly(LoadMetaFormAot("UniTask"), HybridCLR.HomologousImageMode.SuperSet);
+        HybridCLR.RuntimeApi.LoadMetadataForAOTAssembly(LoadMetaFormAot("YooAsset"), HybridCLR.HomologousImageMode.SuperSet);
+
+
         // 创建游戏管理器
         UniModule.CreateModule<GameManager>();
 
         // 开启游戏流程
         GameManager.Instance.Run();
     }
+
 
 	private bool _isRun = false;
 	private EventGroup _eventGroup = new EventGroup();

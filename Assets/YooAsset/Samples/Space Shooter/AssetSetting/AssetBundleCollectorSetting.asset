@@ -101,8 +101,8 @@ MonoBehaviour:
       AssetTags: 
       ActiveRuleName: EnableGroup
       Collectors:
-      - CollectPath: Assets/YooAsset/Samples/Space Shooter/CodeRes/SpaceShooterSample.dll.bytes
-        CollectorGUID: ba78b3a3459cee94f8cf68f6d39f18d0
+      - CollectPath: Assets/YooAsset/Samples/Space Shooter/CodeRes
+        CollectorGUID: b1689f626944b9a4b8f4aaafc7efe83b
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackRawFile
